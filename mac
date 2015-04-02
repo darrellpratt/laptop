@@ -151,6 +151,7 @@ brewList="
  tree
  unixodbc
  wget
+ zsh
  "
 
 # brew_install_or_upgrade 'git'
@@ -173,6 +174,8 @@ for i in $brewList
  	brew_install_or_upgrade $i
  done
 
+
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 # brew_install_or_upgrade 'rbenv'
 # brew_install_or_upgrade 'ruby-build'
