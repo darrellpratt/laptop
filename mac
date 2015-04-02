@@ -152,6 +152,7 @@ brewList="
  unixodbc
  wget
  zsh
+ curl
  "
 
 # brew_install_or_upgrade 'git'
