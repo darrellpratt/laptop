@@ -49,7 +49,7 @@ case "$SHELL" in
   */zsh) : ;;
   *)
     fancy_echo "Changing your shell to zsh ..."
-      chsh -s "$(which zsh)"
+      #chsh -s "$(which zsh)"
     ;;
 esac
 
@@ -131,17 +131,23 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 
+brewTapList="
+caskroom/cask
+clusterhq/flocker
+homebrew/binary
+homebrew/dupes
+pivotal/tap
+"
 brewList="
  node
- brew-cask
  elixir
  erlang
- flocker-0.3.2
  gcc
  git-cal
  git-extras
  groovy
- haskell-platform
+ ghc
+ cabal-install
  htop-osx
  leiningen
  maven
@@ -153,6 +159,8 @@ brewList="
  wget
  zsh
  curl
+ rbenv
+ ruby-build
  "
 
 # brew_install_or_upgrade 'git'
@@ -169,6 +177,13 @@ brewList="
 # brew_install_or_upgrade 'qt'
 # brew_install_or_upgrade 'hub'
 # brew_install_or_upgrade 'node'
+
+for i in $brewTapList
+do
+    brew tap $i
+done
+
+
 
 for i in $brewList
  do
