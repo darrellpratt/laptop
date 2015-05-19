@@ -145,6 +145,7 @@ brewList="
  gcc
  git-cal
  git-extras
+ go
  groovy
  ghc
  cabal-install
