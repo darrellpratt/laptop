@@ -83,6 +83,11 @@ brew_tap() {
   brew tap "$1" 2> /dev/null
 }
 
+brew_cask() {
+  fancy_echo "Installing %s ..." "$1"  
+  brew cask install "$@"
+}
+
 brew_expand_alias() {
   brew info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
 }
@@ -139,6 +144,7 @@ homebrew/dupes
 pivotal/tap
 "
 brewList="
+ caskroom/cask/brew-cask
  node
  elixir
  erlang
@@ -164,6 +170,13 @@ brewList="
  ruby-build
  "
 
+caskList="
+  vagrant
+  boot2docker
+  docker-compose
+  docker-machine
+"
+
 # brew_install_or_upgrade 'git'
 # brew_install_or_upgrade 'postgres'
 # brew_launchctl_restart 'postgresql'
@@ -188,18 +201,25 @@ done
 
 for i in $brewList
  do
- 	brew_install_or_upgrade $i
+ #	brew_install_or_upgrade $i
+   echo $i
  done
+
+for i in $caskList
+  do 
+    brew_cask $i
+  done
+
 
 
 # brew_install_or_upgrade 'rbenv'
 # brew_install_or_upgrade 'ruby-build'
 
 # shellcheck disable=SC2016
-append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1
+#append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1
 
 # brew_install_or_upgrade 'openssl'
-brew unlink openssl && brew link openssl --force
+#brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade 'libyaml'
 
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
