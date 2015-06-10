@@ -168,6 +168,7 @@ brewList="
  curl
  rbenv
  ruby-build
+ rust
  "
 
 caskList="
@@ -207,9 +208,9 @@ for i in $brewList
  done
 
 for i in $caskList
-  do 
-    brew_cask $i
-  done
+do 
+  brew_cask $i
+done
 
 
 
@@ -243,6 +244,10 @@ fancy_echo "Configuring Bundler ..."
   bundle config --global jobs $((number_of_cores - 1))
 
 brew_install_or_upgrade 'heroku-toolbelt'
+
+# oh_my_zsh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
 
 if ! command -v rcup >/dev/null; then
   brew_tap 'thoughtbot/formulae'
