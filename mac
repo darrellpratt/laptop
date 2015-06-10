@@ -169,6 +169,7 @@ brewList="
  rbenv
  ruby-build
  rust
+ the_silver_searcher
  "
 
 caskList="
