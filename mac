@@ -175,6 +175,7 @@ caskList="
   boot2docker
   docker-compose
   docker-machine
+  intellij-idea
 "
 
 # brew_install_or_upgrade 'git'
