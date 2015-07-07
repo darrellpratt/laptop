@@ -24,7 +24,7 @@ Install
 Download, review, then execute the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+curl --remote-name http://git.cars.com/projects/MP/repos/mac-bootstrapper/browse/mac?at=c2ec43ca15541dca190b4c71e7285b7a84565115&raw
 less mac
 sh mac 2>&1 | tee ~/laptop.log
 ```
@@ -43,21 +43,14 @@ What it sets up
 
 * [Bundler] for managing Ruby libraries
 * [Exuberant Ctags] for indexing files for vim tab completion
-* [Foreman] for managing web processes
 * [gh] for interacting with the GitHub API
 * [Heroku Toolbelt] for interacting with the Heroku API
 * [Homebrew] for managing operating system libraries
-* [ImageMagick] for cropping and resizing images
 * [Node.js] and [NPM], for running apps and installing JavaScript packages
-* [Postgres] for storing relational data
 * [Qt] for headless JavaScript testing via Capybara Webkit
-* [Rbenv] for managing versions of Ruby
-* [RCM] for managing company and personal dotfiles
-* [Redis] for storing key-value data
 * [Ruby Build] for installing Rubies
 * [Ruby] stable for writing general-purpose code
 * [The Silver Searcher] for finding things in files
-* [Tmux] for saving project state and switching between projects
 * [Zsh] as your shell
 
 [Bundler]: http://bundler.io/
