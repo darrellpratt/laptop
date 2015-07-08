@@ -148,6 +148,7 @@ homebrew/binary
 homebrew/dupes
 pivotal/tap
 "
+
 brewList="
  caskroom/cask/brew-cask
  node
@@ -174,6 +175,8 @@ brewList="
  rust
  the_silver_searcher
  node
+ libyaml
+ heroku-toolbelt
  "
 
 caskList="
@@ -212,14 +215,6 @@ do
   npm_install $i
 done
 
-
-npm install gulp --g
-npm install grunt-cli --g
-
-# brew_install_or_upgrade 'openssl'
-#brew unlink openssl && brew link openssl --force
-brew_install_or_upgrade 'libyaml'
-
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
 
 eval "$(rbenv init - zsh)"
@@ -239,16 +234,9 @@ fancy_echo "Configuring Bundler ..."
   number_of_cores=$(sysctl -n hw.ncpu)
   bundle config --global jobs $((number_of_cores - 1))
 
-brew_install_or_upgrade 'heroku-toolbelt'
 
 # oh_my_zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
-
-if ! command -v rcup >/dev/null; then
-  brew_tap 'thoughtbot/formulae'
-  brew_install_or_upgrade 'rcm'
-fi
 
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
