@@ -192,6 +192,7 @@ npmList="
   grunt-cli
   bower
   git-stats
+  nodemon
 "
 
 for i in $brewTapList
