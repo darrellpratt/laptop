@@ -202,7 +202,7 @@ done
 
 for i in $brewList
  do
- #	brew_install_or_upgrade $i
+ 	brew_install_or_upgrade $i
    echo $i
  done
 
