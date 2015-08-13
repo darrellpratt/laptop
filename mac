@@ -151,7 +151,6 @@ pivotal/tap
 
 brewList="
  caskroom/cask/brew-cask
- node
  gcc
  git-cal
  git-extras
@@ -194,6 +193,9 @@ npmList="
   git-stats
   nodemon
 "
+
+# install node first from n
+curl -L http://git.io/n-install | bash
 
 for i in $brewTapList
 do
