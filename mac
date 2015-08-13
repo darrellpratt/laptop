@@ -195,6 +195,7 @@ npmList="
 "
 
 # install node first from n
+brew uninstall node && brew prune
 curl -L http://git.io/n-install | bash
 
 for i in $brewTapList
