@@ -197,6 +197,7 @@ npmList="
 # install node first from n
 brew uninstall node && brew prune
 curl -L http://git.io/n-install | bash
+n lts
 
 for i in $brewTapList
 do
@@ -216,7 +217,7 @@ done
 
 for i in $npmList
 do
-  npm_install $i
+  npm_install -g $i
 done
 
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
